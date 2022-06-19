@@ -9,6 +9,7 @@ using System.Text;
 namespace DNS.Client
 {
 
+
     public class DnsClient
     {
         public DnsClient()
@@ -16,7 +17,7 @@ namespace DNS.Client
 
         }
 
-        public void Request()
+        public void Request(DnsQueryRequest request)
         {
             // setup
             using var client = new UdpClient();
@@ -26,9 +27,9 @@ namespace DNS.Client
             client.Connect(ep);
 
             // send data
-            var request = new DnsQuery();
-            request.PrintBytes();
-            client.Send(request.GetBytes());
+            var query = new DnsQuery(request);
+            query.PrintBytes();
+            client.Send(query.GetBytes());
 
             // then receive data
             var receivedData = client.Receive(ref ep);
@@ -46,5 +47,4 @@ namespace DNS.Client
             Console.WriteLine(text);
         }
     }
-
 }

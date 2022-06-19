@@ -4,19 +4,20 @@ using System.Collections.Generic;
 
 namespace DNS.Client.Request
 {
+    
     public class DnsQuery
     {
         private readonly HeaderSection headerSection;
 
-        public DnsQuery()
+        public DnsQuery(DnsQueryRequest request)
         {
-            this.headerSection = new HeaderSection(16, 
-                FlagQr.Query,
-                FlagOpcode.Query, 
-                FlagAuthoritativeAnswer.NotTheOwner, 
-                Truncation.Permitted, 
-                RecursionDesired.Desired, 
-                RecursionAvailable.NotAvailable, 
+            this.headerSection = new HeaderSection(request.TransactionId, 
+                request.FlagQr,
+                request.FlagOpcode, 
+                request.FlagAuthoritativeAnswer, 
+                request.Truncation, 
+                request.RecursionDesired, 
+                request.RecursionAvailable, 
                 1,
                 0,
                 0,
