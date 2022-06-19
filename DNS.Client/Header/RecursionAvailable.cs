@@ -1,8 +1,7 @@
-﻿namespace DNS.Client.Header
+﻿namespace DNS.Client;
+
+public enum RecursionAvailable : byte
 {
-    public enum RecursionAvailable : byte
-    {
-        NotAvailable = 0,
-        Available = 1 << 0,
-    }
+    NotAvailable = 0,
+    Available = 1 << 0,
 }

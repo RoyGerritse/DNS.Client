@@ -1,17 +1,16 @@
-﻿namespace DNS.Client.Header
+﻿namespace DNS.Client;
+
+public class RecursionDesiredField
 {
-    internal class RecursionDesiredField
+    private RecursionDesired value;
+
+    public RecursionDesiredField(RecursionDesired value)
     {
-        private RecursionDesired value;
+        this.value = value;
+    }
 
-        public RecursionDesiredField(RecursionDesired value)
-        {
-            this.value = value;
-        }
-
-        public byte GetByte()
-        {
-            return (byte)value;
-        }
+    public byte GetByte()
+    {
+        return (byte)value;
     }
 }

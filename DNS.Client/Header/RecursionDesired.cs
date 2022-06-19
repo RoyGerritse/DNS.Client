@@ -1,8 +1,7 @@
-﻿namespace DNS.Client.Header
+﻿namespace DNS.Client;
+
+public enum RecursionDesired : byte
 {
-    public enum RecursionDesired : byte
-    {
-        NotDesired = 0,
-        Desired = 1 << 0,
-    }
+    NotDesired = 0,
+    Desired = 1 << 0,
 }

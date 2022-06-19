@@ -1,14 +1,16 @@
 ﻿using System;
-using DNS.Client;
 
-namespace DNS.Client.Console
+namespace DNS.Client.Console;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
+        var dnsClient = new DnsClient();
+        var request = new DnsQueryRequest()
         {
-            var dnsClient = new DnsClient();
-            dnsClient.Request();
-        }
+            TransactionId = Convert.ToUInt16("0xa05c", 16)
+        };
+        dnsClient.Request(request);
     }
 }

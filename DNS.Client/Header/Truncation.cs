@@ -1,8 +1,7 @@
-﻿namespace DNS.Client.Header
+﻿namespace DNS.Client;
+
+public enum Truncation : byte
 {
-    public enum Truncation : byte
-    {
-        Permitted = 0,
-        Truncated = 1 << 0
-    }
+    Permitted = 0,
+    Truncated = 1 << 0
 }

@@ -17,7 +17,7 @@
 /// |                    ARCOUNT                    |
 /// +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
 /// </summary>
-namespace DNS.Client.Header
+namespace DNS.Client
 {
     /// <summary>
     /// Header section of the the DNS message
