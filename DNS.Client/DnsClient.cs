@@ -5,7 +5,6 @@ using System.Text;
 
 namespace DNS.Client;
 
-
 public class DnsClient
 {
     public DnsClient()

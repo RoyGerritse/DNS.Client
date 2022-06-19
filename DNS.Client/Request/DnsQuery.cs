@@ -5,6 +5,7 @@ namespace DNS.Client;
 public class DnsQuery
 {
     private readonly HeaderSection headerSection;
+    private readonly QuestionSection questionSection;
 
     public DnsQuery(DnsQueryRequest request)
     {
@@ -19,13 +20,15 @@ public class DnsQuery
             0,
             0,
             1);
+
+        this.questionSection = new QuestionSection(request.Questions);
     }
 
     public byte[] GetBytes()
     {
         var allBytes = new List<byte>();
-        byte[] headerBytes = headerSection.ToByteArray();
-        allBytes.AddRange(headerBytes);
+        allBytes.AddRange(headerSection.GetBytes());
+        allBytes.AddRange(questionSection.GetBytes());
         return allBytes.ToArray();
     }
 }

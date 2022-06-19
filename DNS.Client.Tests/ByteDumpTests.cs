@@ -8,7 +8,7 @@ public class ByteDumpTests
     {
         // 0xa05c A google.nl OPT
         // Arange
-        var byteDump = new byte[12] {
+        var byteDump = new byte[27] {
             0xa0, // Transaction byte 1
             0x5c, // Transaction byte 2
             0x01, // Flag byte 1
@@ -21,21 +21,21 @@ public class ByteDumpTests
             0x00, // Authority RRs byte 2
             0x00, // Additional RRs byte 1
             0x01, // Additional RRs byte 2
-            //0x06,
-            //0x67,
-            //0x6f,
-            //0x6f,
-            //0x67,
-            //0x6c,
-            //0x65,
-            //0x02,
-            //0x6e,
-            //0x6c,
-            //0x00,
-            //0x00,
-            //0x01,
-            //0x00,
-            //0x01,
+            0x06, // 6 count of letter 'google'
+            0x67, // g
+            0x6f, // o
+            0x6f, // o
+            0x67, // g
+            0x6c, // l
+            0x65, // e
+            0x02, // 2 count of 'nl'
+            0x6e, // n
+            0x6c, // l
+            0x00, // Question ending 0
+            0x00, // Question type byte 1
+            0x01, // Question type byte 2
+            0x00, // Question class byte 1
+            0x01, // Question class byte 2
             //0x00,
             //0x00,
             //0x29,

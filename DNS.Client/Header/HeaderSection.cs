@@ -51,7 +51,7 @@ namespace DNS.Client
             this.arCount = new ArCount(arCount);
         }
 
-        public byte[] ToByteArray()
+        public byte[] GetBytes()
         {
             var header = new List<byte>();
             header.AddRange(this.transactionId.ToByteArray());
