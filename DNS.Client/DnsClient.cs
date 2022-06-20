@@ -6,12 +6,7 @@ using System.Text;
 namespace DNS.Client;
 
 public class DnsClient
-{
-    public DnsClient()
-    {
-
-    }
-
+{ 
     public void Request(DnsQueryRequest request)
     {
         // setup
