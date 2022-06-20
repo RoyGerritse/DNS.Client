@@ -22,12 +22,6 @@ public class Program
                     Domain = "google.nl",
                     Type = QuestionType.A,
                     Class = QuestionClass.IN
-                },
-                new Question
-                {
-                    Domain = "roygerritse.nl",
-                    Type = QuestionType.A,
-                    Class = QuestionClass.IN
                 }
             }
         };
