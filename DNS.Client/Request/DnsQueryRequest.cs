@@ -11,6 +11,5 @@ public class DnsQueryRequest
     public Truncation Truncation { get; set; }
     public RecursionDesired RecursionDesired { get; set; }
     public RecursionAvailable RecursionAvailable { get; set; }
-
     public IEnumerable<Question> Questions { get; set; } = new List<Question>(); 
 }

@@ -3,6 +3,6 @@
 public class Question
 {
     public string Domain { get; set; }
-    public string Type { get; set; }
-    public string Class { get; set; }
+    public QuestionType Type { get; set; }
+    public QuestionClass Class { get; set; }
 }

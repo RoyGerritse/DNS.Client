@@ -8,13 +8,13 @@ public class QuestionField
     public QuestionField(Question value)
     {
         Domain = value.Domain;
-        Class = value.Class;
         Type = value.Type;
+        Class = value.Class;
     }
 
     public string Domain { get; private set; }
-    public string Class { get; private set; }
-    public string Type { get; private set; }
+    public QuestionType Type { get; private set; }
+    public QuestionClass Class { get; private set; }
 
     public string[] DomainSections => Domain.Split('.');
 
@@ -34,10 +34,10 @@ public class QuestionField
 
         // TODO: class and type
         bytes.Add(0x00);
-        bytes.Add(0x01);
+        bytes.Add(Convert.ToByte(Type));
 
         bytes.Add(0x00);
-        bytes.Add(0x01);
+        bytes.Add(Convert.ToByte(Class));
         return bytes.ToArray();
     }
 }

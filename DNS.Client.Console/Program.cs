@@ -20,8 +20,14 @@ public class Program
                 new Question
                 {
                     Domain = "google.nl",
-                    Type = "A",
-                    Class = "IN"
+                    Type = QuestionType.A,
+                    Class = QuestionClass.IN
+                },
+                new Question
+                {
+                    Domain = "roygerritse.nl",
+                    Type = QuestionType.A,
+                    Class = QuestionClass.IN
                 }
             }
         };

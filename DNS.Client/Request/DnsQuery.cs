@@ -6,6 +6,7 @@ public class DnsQuery
 {
     private readonly HeaderSection headerSection;
     private readonly QuestionSection questionSection;
+    private readonly ResourceRecordSection resourceRecordSection;
 
     public DnsQuery(DnsQueryRequest request)
     {
@@ -20,8 +21,8 @@ public class DnsQuery
             0,
             0,
             1);
-
         this.questionSection = new QuestionSection(request.Questions);
+        this.resourceRecordSection = new ResourceRecordSection("");
     }
 
     public byte[] GetBytes()
@@ -29,6 +30,7 @@ public class DnsQuery
         var allBytes = new List<byte>();
         allBytes.AddRange(headerSection.GetBytes());
         allBytes.AddRange(questionSection.GetBytes());
+        allBytes.AddRange(resourceRecordSection.GetBytes());
         return allBytes.ToArray();
     }
 }

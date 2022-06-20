@@ -8,7 +8,7 @@ public class ByteDumpTests
     {
         // 0xa05c A google.nl OPT
         // Arange
-        var byteDump = new byte[27] {
+        var byteDump = new byte[] {
             0xa0, // Transaction byte 1
             0x5c, // Transaction byte 2
             0x01, // Flag byte 1
@@ -36,29 +36,29 @@ public class ByteDumpTests
             0x01, // Question type byte 2
             0x00, // Question class byte 1
             0x01, // Question class byte 2
-            //0x00,
-            //0x00,
-            //0x29,
-            //0x10,
-            //0x00,
-            //0x00,
-            //0x00,
-            //0x00,
-            //0x00,
-            //0x00,
-            //0x0c,
-            //0x00,
-            //0x0a,
-            //0x00,
-            //0x08,
-            //0xf8,
-            //0xf6,
-            //0x77,
-            //0x19,
-            //0x50,
-            //0x5e,
-            //0x36,
-            //0x86
+            0x00,
+            0x00,
+            0x29,
+            0x10,
+            0x00,
+            0x00,
+            0x00,
+            0x00,
+            0x00,
+            0x00,
+            0x0c,
+            0x00,
+            0x0a,
+            0x00,
+            0x08,
+            0xf8,
+            0xf6,
+            0x77,
+            0x19,
+            0x50,
+            0x5e,
+            0x36,
+            0x86
         };
 
         var request = new DnsQueryRequest
@@ -73,8 +73,8 @@ public class ByteDumpTests
                 new Question
                 {
                     Domain = "google.nl",
-                    Type = "A",
-                    Class = "IN"
+                    Type = QuestionType.A, 
+                    Class = QuestionClass.IN
                 }
             }
         };
